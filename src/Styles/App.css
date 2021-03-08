@@ -1,4 +1,22 @@
 html {
-    background-color: black;
-    color: lightgray;
+  background-color: black;
+  color: lightgray;
+}
+
+img {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 200px;
+}
+
+input {
+  color: lightgray;
+}
+
+a {
+  margin: 5px;
+}
+
+button {
+  margin: 5px;
 }
