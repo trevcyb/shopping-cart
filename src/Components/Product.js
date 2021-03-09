@@ -39,14 +39,14 @@ const Product = (props) => {
             value={quantity}
             placeholder="Enter Quantity Desired"
           />
-          <a class="waves-effect waves-light btn">
-            <i class="material-icons left">thumb_up</i>confirm
+          <a className="waves-effect waves-light btn">
+            <i className="material-icons left">thumb_up</i>confirm
           </a>
           <a
-            class="btn-floating red btn-small"
+            className="btn-floating red btn-small"
             onClick={handleCancel.bind(this)}
           >
-            <i class="material-icons">close</i>
+            <i className="material-icons">close</i>
           </a>
         </>
       )}

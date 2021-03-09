@@ -2,11 +2,6 @@ import React, { useState } from "react";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
-  const [cartVis, setCartVis] = useState(false);
-
-  const showCart = () => {
-    setCartVis(!cartVis);
-  };
 
   const addItem = (product) => {
     setCart((prevCart) => [...prevCart, product]);

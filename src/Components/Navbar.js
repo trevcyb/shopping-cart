@@ -16,9 +16,7 @@ const Navbar = (props) => {
             <Link to="/shop">Shop</Link>
           </li>
           <li>
-            <a class="material-icons" onClick={showCart}>
-              shopping_cart
-            </a>
+            <a className="material-icons">shopping_cart</a>
           </li>
         </ul>
       </div>
