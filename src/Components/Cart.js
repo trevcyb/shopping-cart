@@ -1,17 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Cart = () => {
+  const [cart, setCart] = useState([]);
+  const [cartVis, setCartVis] = useState(false);
 
-    const [cart, setCart] = useState([]);
+  const showCart = () => {
+    setCartVis(!cartVis);
+  };
 
-    const addItem = (product) => {
-        setCart((prevCart) => [...prevCart, product]);
-    }
+  const addItem = (product) => {
+    setCart((prevCart) => [...prevCart, product]);
+  };
 
-    const delItem = (product) => {
-        editArr = cart.slice();
-        editArr.splice(editArr.indexOf(product),1);
-        setCart(editArr);
-    }
+  const delItem = (product) => {
+    let editArr = cart.slice();
+    editArr.splice(editArr.indexOf(product), 1);
+    setCart(editArr);
+  };
 
-}
+  return (
+    <div>
+      {cartVis && (
+        <ul>
+          {cart.map((cartitem) => (
+            <li>
+              <img src={cartitem.imagesrc} alt={cartitem.name} />
+              <h6>{cartitem.name}</h6>
+              <h5>
+                Total: ${cartitem.unitCost}*{cartitem.quantity}
+              </h5>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+export default Cart;
