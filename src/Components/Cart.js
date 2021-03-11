@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-const Cart = () => {
+const Cart = ({cart}) => {
 
-    const [cart, setCart] = useState([]);
-
-    const addItem = (product) => {
-        setCart((prevCart) => [...prevCart, product]);
-    }
-
-    const delItem = (product) => {
-        editArr = cart.slice();
-        editArr.splice(editArr.indexOf(product),1);
-        setCart(editArr);
-    }
+    return (
+        <ul id="slide-out" className="sidenav right">
+            <li>IF I HADNT MADE MEEEEE </li>
+            {cart.map((cartitem) => {
+                <li>
+                    <img src={cartitem.imagesrc} alt={cartitem.name}/>
+                    <h5>{cartitem.name}</h5>
+                    <h4>{cartitem.quantity * cartitem.unitCost}</h4>
+                </li>
+            })}
+        </ul>
+    )
 
 }
+
+export default Cart
