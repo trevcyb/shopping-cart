@@ -10,7 +10,7 @@ const Navbar = () => {
                     <ul className="right">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/shop">Shop</Link></li>
-                        <a className="sidenav-trigger" data-target="slide-out">
+                        <a className="sidenav-trigger show-on-large" data-target="slide-out">
                             <i className="material-icons">shopping_cart</i>
                         </a>
                     </ul>

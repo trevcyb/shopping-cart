@@ -13,7 +13,7 @@ const Shop = () => {
             productName: "PRS SE 245",
             description: 'The SE 245 will cover all the tones you need in style and is the answer for players who grew up using short scale, single-cutaway guitars.',
             unitCost: 450,
-            imagesrc: prs
+            imagesrc: prs,
         },
         {
             productName: "Ibanez RG470AHM",
