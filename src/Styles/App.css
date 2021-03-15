@@ -16,3 +16,35 @@ input {
 button {
   margin: 5px;
 }
+
+.sidenav {
+  background-color: black;
+  color: lightgray;
+  width: 500px;
+}
+
+.cartlistitem {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 1px solid lightgray;
+}
+
+.checkout {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  margin-top: 10px;
+}
