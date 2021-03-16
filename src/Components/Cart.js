@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, delItem }) => {
 
     const [total, setTotal] = useState(0);
     const [totaldiv, settotaldiv] = useState(false);
-
 
     useEffect(() => {
         if (cart.length > 0) {
@@ -13,6 +12,13 @@ const Cart = ({ cart }) => {
         }
     }, [cart])
 
+    const addQty = (quantity) => {
+        quantity += 1;
+    }
+
+    const remQty = (quantity) => {
+        quantity -= 1;
+    }
 
     return (
         <ul id="slide-out" className="sidenav right">
@@ -20,7 +26,10 @@ const Cart = ({ cart }) => {
             {cart.map((cartitem) => (
                 <li className="cartlistitem" key={cartitem.id}>
                     <img className="left-align" src={cartitem.imagesrc} alt={cartitem.name} />
-                    <h6 className="right">{cartitem.productName} x {cartitem.quantity} <br /> <br /> ${cartitem.quantity * cartitem.unitCost}</h6>
+                    <h6 className="right">{cartitem.productName} x {cartitem.quantity} 
+                    <br /> <br /> 
+                    <button className="right" onClick={() => delItem(cartitem.id)}><i className="material-icons">delete</i></button> 
+                    ${cartitem.quantity * cartitem.unitCost}</h6>
                 </li>
             ))}
             {!totaldiv && (

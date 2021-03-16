@@ -65,13 +65,17 @@ const Shop = () => {
         }
     }
 
+    const delItem = (id) => {
+        setCart(cart.filter((cartitem) => cartitem.id !== id));
+    }
+
     return (
         <div className="container">
             <h2 className="center-align">Welcome to the Shop!</h2>
-            <Cart cart={cart} />
+            <Cart cart={cart} delItem={delItem}/>
             <div className="row flex">
                 {productList.map((product) => (
-                    <Product product={product} key={product.id} addItem={addItem}/>
+                    <Product product={product} key={product.id} addItem={addItem} />
                 ))}
             </div>
         </div>
