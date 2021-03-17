@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Cart = ({ cart, delItem }) => {
+const Cart = ({ cart, delItem, addQty, remQty }) => {
 
     const [total, setTotal] = useState(0);
     const [totaldiv, settotaldiv] = useState(false);
@@ -9,16 +9,10 @@ const Cart = ({ cart, delItem }) => {
         if (cart.length > 0) {
             setTotal(cart.map((cartitem) => (cartitem.quantity * cartitem.unitCost)).reduce((a, b) => a + b));
             settotaldiv(true);
+        } else {
+            settotaldiv(false);
         }
     }, [cart])
-
-    const addQty = (quantity) => {
-        quantity += 1;
-    }
-
-    const remQty = (quantity) => {
-        quantity -= 1;
-    }
 
     return (
         <ul id="slide-out" className="sidenav right">
@@ -27,7 +21,9 @@ const Cart = ({ cart, delItem }) => {
                 <li className="cartlistitem" key={cartitem.id}>
                     <img className="left-align" src={cartitem.imagesrc} alt={cartitem.name} />
                     <h6 className="right">{cartitem.productName} x {cartitem.quantity} 
-                    <br /> <br /> 
+                    <br /> <br />
+                    <button onClick={() => addQty(cartitem.id)}>+</button> 
+                    <button onClick={() => remQty(cartitem.id, cartitem.quantity)}>-</button>
                     <button className="right" onClick={() => delItem(cartitem.id)}><i className="material-icons">delete</i></button> 
                     ${cartitem.quantity * cartitem.unitCost}</h6>
                 </li>

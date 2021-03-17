@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
 
-    const [cartshow, setcartshow] = useState();
+    const [cartshow, setcartshow] = useState(false);
 
     const handleCart = (e) => {
         console.log(e);
@@ -28,7 +28,7 @@ const Navbar = () => {
                 <div className="container">
                     <a className="center brand-logo">The Shop</a>
                     <ul className="right">
-                        <li id="home" onClick={(e) => handleCart(e)} onLoad={() => handleCartload()}><NavLink to="/">Home</NavLink></li>
+                        <li id="home" onClick={(e) => handleCart(e)} onLoad={() => handleCartload()}><NavLink to="/home">Home</NavLink></li>
                         <li id="shop" onClick={(e) => handleCart(e)} onLoad={() => handleCartload()}><NavLink to="/shop">Shop</NavLink></li>
                         {cartshow && (
                         <a className="sidenav-trigger show-on-large" data-target="slide-out">

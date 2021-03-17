@@ -5,7 +5,7 @@ import ibanez from "./images/RG470AHM.jpg";
 import palmer from "./images/p-1300.jpg";
 import amp from "./images/MG30GFX.jpg";
 import picks from "./images/picks.jpg";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Cart from './Cart';
 
 const Shop = () => {
@@ -69,10 +69,19 @@ const Shop = () => {
         setCart(cart.filter((cartitem) => cartitem.id !== id));
     }
 
+    const addQty = (id) => {
+        setCart(cart.map((cartitem) => (cartitem.id === id ? {...cartitem, quantity: cartitem.quantity + 1} : cartitem)))
+    }
+
+    const remQty = (id) => {
+        setCart(cart.map((cartitem) => (cartitem.id === id ? {...cartitem, quantity: cartitem.quantity - 1} : cartitem))
+        .filter((cartitem) => cartitem.quantity !== 0))
+    }
+
     return (
         <div className="container">
             <h2 className="center-align">Welcome to the Shop!</h2>
-            <Cart cart={cart} delItem={delItem}/>
+            <Cart cart={cart} delItem={delItem} addQty={addQty} remQty={remQty}/>
             <div className="row flex">
                 {productList.map((product) => (
                     <Product product={product} key={product.id} addItem={addItem} />
