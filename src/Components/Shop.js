@@ -5,7 +5,7 @@ import ibanez from "./images/RG470AHM.jpg";
 import palmer from "./images/p-1300.jpg";
 import amp from "./images/MG30GFX.jpg";
 import picks from "./images/picks.jpg";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Cart from './Cart';
 
 const Shop = () => {

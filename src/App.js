@@ -6,7 +6,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter forceRefresh>
       <div className="App">
         <Navbar />
         <Route exact path="/home" component={Home} />
